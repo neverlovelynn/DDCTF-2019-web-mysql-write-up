@@ -3,7 +3,7 @@
   本题模拟的是某版本thrift go 和java 通信导致的精度丢失问题.解题方法有很多,我这里只给出我认为最优雅的解题方法.
 
   接口 : /ctf/api/buy_ticket?ticket_price=本处接口存在int64 转int32 精度丢失问题.
-所以只需要将price的低32为在100范围内即可如:
+所以只需要将price的低32位在100范围内即可如:
 98998996172801
 10110100000101000000000000000000000000000000001
 
@@ -485,7 +485,7 @@ def mysql_login(host, port, username, password):
 
 有个提示非常明显的ssrf
 
-所以在vps的8123端口构造302条转 header里的location对应gopher协议接上mysql协议url编码后的内容
+所以在vps的8123端口构造302跳转 header里的location对应gopher协议接上mysql协议url编码后的内容
 
 
 示例:
